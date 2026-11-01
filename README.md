@@ -64,8 +64,6 @@
 | [test.unity](Assets/Scenes/test.unity) | 联网、视频、文字记录与岩石生成测试 | 启用，首个入口 |
 | [Volcano.unity](Assets/Scenes/Volcano.unity) | 火山主题展示与模型切换 | 启用 |
 | [Earthquake.unity](Assets/Scenes/Earthquake.unity) | 地震主题展示与交互装置 | 启用 |
-| [BasicScene.unity](Assets/Scenes/BasicScene.unity) | 基础场景 | 未启用 |
-| [SampleScene.unity](Assets/Scenes/SampleScene.unity) | 示例场景 | 未启用 |
 
 构建顺序记录在 [EditorBuildSettings.asset](ProjectSettings/EditorBuildSettings.asset)。若希望构建后直接进入火山或地震场景，在 Unity 的构建场景列表中将目标场景移到首位。`RoomTransport` 负责同一场景内的位置切换。
 
