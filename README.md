@@ -55,8 +55,6 @@
 
 当前 JOIN 直接读取 Inspector 中的 `joinCode`，场景内的文字输入框用于文字记录，未连接到该字段。独立客户端构建若需要在运行时输入连接码，需要先为 `NetworkConnect.joinCode` 接入输入界面。
 
-仓库还保留了 [VRMPAssets](Assets/VRMPAssets) 中的多人基础组件，包括大厅管理、玩家外观和语音管理。其 `LobbyManager` 使用大厅码；上述 CREATE/JOIN 流程使用 Relay 连接码，两种连接码分别对应各自的入口。
-
 ## 场景与构建入口
 
 | 场景 | 用途 | 当前构建列表 |
