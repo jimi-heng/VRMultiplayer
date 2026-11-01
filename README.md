@@ -1,6 +1,6 @@
 # VRMultiplayer
 
-基于 Unity 6 的多人 VR 地学交互学习项目，包含火山、地震主题场景和交互测试场景。参与者可以在共享空间中观察模型、操作教学装置，并记录文字。
+基于 Unity 6 的多人 VR 地学交互学习项目，包含火山、地震两个主题场景。参与者可以在共享空间中观察模型、操作教学装置，并记录文字。
 
 ## 主要内容
 
@@ -39,7 +39,7 @@
 
 2. 将项目关联到你有访问权限的 Unity 云项目，配置 **Unity Gaming Services = Unity 云端游戏服务（简称 UGS）**。主要场景的联网入口使用匿名身份认证和 **Relay = 云端连接转发服务**；运行多人功能前，确认对应服务已配置。如果使用仓库中的大厅或 Vivox 功能，再配置相应服务。
 
-3. 首次调试打开 [Assets/Scenes/test.unity](Assets/Scenes/test.unity)，连接头显后进入 Play Mode。查看教学内容时，分别打开 `Volcano.unity` 或 `Earthquake.unity`。
+3. 打开 [Assets/Scenes/Volcano.unity](Assets/Scenes/Volcano.unity)，连接头显后进入 Play Mode。查看地震教学内容时，打开 [Earthquake.unity](Assets/Scenes/Earthquake.unity)。
 
 无头显调试可手动配置仓库附带的 [XR Device Simulator 预制体](Assets/Samples/XR%20Interaction%20Toolkit/3.0.7/XR%20Device%20Simulator/XR%20Device%20Simulator.prefab)。XR Device Simulator = 用键鼠模拟头显和控制器的编辑器工具；[当前设置](Assets/XRI/Settings/Resources/XRDeviceSimulatorSettings.asset)未启用自动实例化。
 
@@ -47,7 +47,7 @@
 
 **主机 CREATE → 获取 Relay 连接码 → 客户端填写 joinCode → JOIN。**
 
-三个主要场景中的按钮均绑定到 [NetworkConnect.cs](Assets/Scripts/NetworkConnect.cs)，使用 Relay 创建或加入连接：
+两个教学场景中的按钮均绑定到 [NetworkConnect.cs](Assets/Scripts/NetworkConnect.cs)，使用 Relay 创建或加入连接：
 
 1. 在主机实例中等待 UGS 初始化完成，点击 **CREATE**。程序创建 Relay 分配并启动主机，连接码会出现在 Unity Console 中；当前脚本通过 `Debug.LogError(newJoinCode)` 输出该码。
 2. 在另一台开发机的编辑器中打开同一场景，进入 Play Mode 并等待初始化完成。在客户端运行中的 `NetworkManager` 对象的 `NetworkConnect` 组件中，将 `joinCode` 字段设为主机刚生成的连接码。
@@ -59,7 +59,6 @@
 
 | 场景 | 用途 | 当前构建列表 |
 | --- | --- | --- |
-| [test.unity](Assets/Scenes/test.unity) | 联网、视频、文字记录与岩石生成测试 | 启用，首个入口 |
 | [Volcano.unity](Assets/Scenes/Volcano.unity) | 火山主题展示与模型切换 | 启用 |
 | [Earthquake.unity](Assets/Scenes/Earthquake.unity) | 地震主题展示与交互装置 | 启用 |
 
